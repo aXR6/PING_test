@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#Desenvolvedor: Thalles dos Santos Canela (Consultor de Tecnologia - DevOps)
+#Empresa: NTECSOFTWARE
+#Data de criação do Script: 04 de Julho e 2022
+
+data=$(date +"%d_%m_%y_%A")
+dir0="/home/$USER/Documentos/Teste_Ping"
+dir1="/home/$USER/Documentos/Teste_Ping/$data"
+
+if [ -e $dir1 ]
+then
+   date +'--SCRIPT NTECSOFTWARE-- Hoje é %A, %d de %B de %Y, o %j dia do ano, as %H:%M --SCRIPT NTECSOFTWARE--' >> $dir1/ping.txt
+   ping www.google.com.br >> $dir1/ping.txt
+else
+   mkdir $dir0
+   mkdir $dir1
+fi
